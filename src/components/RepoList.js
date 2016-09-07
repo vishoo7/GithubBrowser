@@ -25,6 +25,14 @@ class RepoList extends React.Component {
     this.serverRequest.abort();
   }
 
+  handleClick(name) {
+    const { handleSubmit } = this.props
+    this.setState({
+      repoName: name
+    });
+    handleSubmit();
+  }
+
   render() {
     const { handleSubmit } = this.props
     
@@ -33,9 +41,9 @@ class RepoList extends React.Component {
         <div>
         {this.state.repos.map(function(repo){
         return (
-          <Repo key={repo.id} name={repo.full_name} description={repo.description} updated={repo.updated_at}/>
+          <Repo key={repo.id} name={repo.full_name} onClick={this.handleClick.bind(this, repo.name)} description={repo.description} updated={repo.updated_at}/>
         )
-        })}
+        }, this)}
         </div>
       </form>
     );

@@ -5,7 +5,7 @@ class Repo extends React.Component {
     return (
       <div>
             <div>
-                <h1 onClick={this.nextPage}>{this.props.name}</h1>
+                <h1 onClick={this.props.onClick}>{this.props.name}</h1>
             </div>
             <div>
                 {this.props.description}
