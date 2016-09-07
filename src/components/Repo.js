@@ -1,11 +1,11 @@
 import React from 'react'
 
-var Repo = React.createClass({
-  render: function(){
+class Repo extends React.Component {
+  render() {
     return (
-        <div>
+      <div>
             <div>
-                <h1>{this.props.name}</h1>
+                <h1 onClick={this.nextPage}>{this.props.name}</h1>
             </div>
             <div>
                 {this.props.description}
@@ -16,7 +16,6 @@ var Repo = React.createClass({
         </div>
     );
   }
-});
-
+}
 
 export default Repo
