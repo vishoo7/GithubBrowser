@@ -9,7 +9,7 @@ const store = createStore(reducer)
 
 render(
   <Provider store={store}>
-    <App />
+    <App username="facebook"/>
   </Provider>,
   document.getElementById('root')
 )

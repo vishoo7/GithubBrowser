@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import RepoList from './RepoList'
 import CommitList from './CommitList'
 
@@ -8,7 +8,8 @@ class App extends Component {
     this.nextPage = this.nextPage.bind(this)
     this.previousPage = this.previousPage.bind(this)
     this.state = {
-      page: 1
+      page: 1,
+      repoName: "AsyncDisplayKit"
     }
   }
   nextPage() {
@@ -21,10 +22,10 @@ class App extends Component {
 
   render() {
     const { onSubmit } = this.props
-    const { page } = this.state
+    const { page, repoName } = this.state
     return (<div>
-        {page === 1 && <RepoList username="facebook" onSubmit={this.nextPage}/>}
-        {page === 2 && <CommitList previousPage={this.previousPage} />}
+        {page === 1 && <RepoList username={this.props.username} onSubmit={this.nextPage}/>}
+        {page === 2 && <CommitList username={this.props.username} reponame={repoName} previousPage={this.previousPage} />}
       </div>
     )
   }
