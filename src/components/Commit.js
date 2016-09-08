@@ -9,20 +9,22 @@ const commitStyle = {
     paddingTop: "30px",
     paddingBottom: "30px"
 }
-class Repo extends React.Component {
+
+class Commit extends React.Component {
   render() {
     return (
       <div style={commitStyle}>
-            <h3 onClick={this.props.onClick}><a href="#">{this.props.name}</a></h3>
+            <h3>{this.props.sha}</h3>
             <div>
-                {this.props.description}
+                {this.props.message}
             </div>
             <div style={infoStyle}>
-                {this.props.updated}
+                {this.props.author}
             </div>
         </div>
     );
   }
-}
+} 
 
-export default Repo
+
+export default Commit
