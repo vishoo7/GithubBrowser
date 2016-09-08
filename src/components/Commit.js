@@ -9,22 +9,19 @@ const commitStyle = {
     paddingTop: "30px",
     paddingBottom: "30px"
 }
-
-class Commit extends React.Component {
-  render() {
-    return (
-      <div style={commitStyle}>
-            <h3>{this.props.sha}</h3>
+const Commit = function(props) {
+  return (
+    <div style={commitStyle}>
+            <h3>{props.sha}</h3>
             <div>
-                {this.props.message}
+                {props.message}
             </div>
             <div style={infoStyle}>
-                {this.props.author}
+                {props.author}
             </div>
         </div>
-    );
-  }
-} 
+  );
+};
 
 
 export default Commit
