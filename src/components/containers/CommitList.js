@@ -1,6 +1,6 @@
 import React from 'react'
-import Commit from '../components/Commit'
-import SearchBar from '../containers/SearchBar'
+import Commit from '../views/Commit'
+import SearchBar from './SearchBar'
 
 
 class CommitList extends React.Component {

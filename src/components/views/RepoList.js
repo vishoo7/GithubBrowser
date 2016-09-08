@@ -1,5 +1,5 @@
 import React from 'react'
-import Repo from '../components/Repo'
+import Repo from './Repo'
 
 
 export default function(props) {
