@@ -1,6 +1,5 @@
 import React from 'react'
 import Commit from '../components/Commit'
-import { reduxForm } from 'redux-form'
 import SearchBar from '../containers/SearchBar'
 import $ from "jquery";
 
@@ -43,7 +42,6 @@ class CommitList extends React.Component {
           }
           rows.push(<Commit key={commit.sha} sha={commit.sha} message={commit.commit.message} author={commit.author.login}/>);
         }.bind(this));
-    console.log(rows);
     return (
       <div>
         <SearchBar
@@ -56,7 +54,4 @@ class CommitList extends React.Component {
   }
 }
 
-export default reduxForm({
-  form: 'wizard',
-  destroyOnUnmount: false
-})(CommitList)
+export default CommitList;
