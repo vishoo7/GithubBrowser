@@ -14,7 +14,7 @@ class SearchBar extends Component {
       <form>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search comments..."
           value={this.props.filterText}
           ref="filterTextInput"
           onChange={this.handleChange.bind(this)}

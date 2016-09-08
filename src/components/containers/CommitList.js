@@ -22,7 +22,7 @@ class CommitList extends React.Component {
   render() {
     let rows = [];
     this.props.commits.forEach(function(commit) {
-          if (this.state.filterText !== "" && commit.commit.message.indexOf(this.state.filterText) === -1 ) {
+          if (this.state.filterText !== "" && commit.commit.message.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1 ) {
             return;
           }
           rows.push(<Commit key={commit.sha} sha={commit.sha} message={commit.commit.message} author={commit.author.login}/>);
