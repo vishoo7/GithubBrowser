@@ -7,7 +7,7 @@ export default function(props) {
         <div>
         {props.repos.map(function(repo){
         return (
-          <Repo key={repo.id} name={repo.full_name} description={repo.description} updated={repo.updated_at}/>
+          <Repo key={repo.id} reponame={repo.name} fullname={repo.full_name} description={repo.description} updated={repo.updated_at}/>
         )
         }, this)}
         </div>

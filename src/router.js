@@ -5,16 +5,15 @@ import { Router, Route, browserHistory } from 'react-router';
 import MainLayout from './components/main-layout';
 
 import RepoListContainer from './containers/RepoListContainer';
-import CommitList from './containers/CommitList'
+import CommitListContainer from './containers/CommitListContainer'
 
 export default (
 
   <Router history={browserHistory}>
     <Route component={MainLayout}>
       <Route path="/" component={RepoListContainer} />
-        <Route path="commit">
-          <Route component={CommitList}>
-          </Route>
+        <Route path="commits">
+          <Route path=":reponame" component={CommitListContainer} />
         </Route>
 
 
