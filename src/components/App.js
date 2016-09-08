@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import RepoList from './RepoList'
-import CommitList from './CommitList'
+import RepoList from '../containers/RepoList'
+import CommitList from '../containers//CommitList'
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class App extends Component {
     const { onSubmit } = this.props
     const { page, repoName } = this.state
     return (<div>
+        <h1>Github Browser</h1>
         {page === 1 && <RepoList username={this.props.username} onSubmit={this.nextPage}/>}
         {page === 2 && <CommitList username={this.props.username} reponame={repoName} previousPage={this.previousPage} />}
       </div>

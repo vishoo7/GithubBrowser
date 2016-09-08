@@ -1,5 +1,5 @@
 import React from 'react'
-import Commit from './Commit'
+import Commit from '../components/Commit'
 import { reduxForm } from 'redux-form'
 import SearchBar from '../containers/SearchBar'
 import $ from "jquery";
@@ -38,10 +38,10 @@ class CommitList extends React.Component {
   render() {
     let rows = [];
     this.state.commits.forEach(function(commit) {
-          if (this.state.filterText != "" && commit.commit.message.indexOf(this.state.filterText) === -1 ) {
+          if (this.state.filterText !== "" && commit.commit.message.indexOf(this.state.filterText) === -1 ) {
             return;
           }
-          rows.push(<Commit key={commit.sha} sha={commit.sha} message={commit.commit.message}/>);
+          rows.push(<Commit key={commit.sha} sha={commit.sha} message={commit.commit.message} author={commit.author.login}/>);
         }.bind(this));
     console.log(rows);
     return (
