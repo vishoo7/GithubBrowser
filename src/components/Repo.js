@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 const infoStyle = {
     fontSize: "12px",
@@ -12,7 +13,8 @@ const commitStyle = {
 const Repo = function(props) {
   return (
       <div style={commitStyle}>
-            <h3 onClick={props.onClick}><a href="#">{props.name}</a></h3>
+
+            <h3><Link to={'/commits/' + props.reponame}>{props.fullname}</Link></h3>
             <div>
                 {props.description}
             </div>
