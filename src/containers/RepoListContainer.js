@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import RepoList from './RepoList';
 import * as githubApi from '../api/github-api';
-import store from '../store';
-import { loadRepository } from '../actions/repository';
 
 const RepoListContainer = React.createClass({
 
