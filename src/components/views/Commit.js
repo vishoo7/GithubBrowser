@@ -17,7 +17,7 @@ const Commit = function(props) {
                 {props.message}
             </div>
             <div style={infoStyle}>
-                {props.author}
+                User: {props.author}
             </div>
         </div>
   );

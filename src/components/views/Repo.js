@@ -19,7 +19,7 @@ const Repo = function(props) {
                 {props.description}
             </div>
             <div style={infoStyle}>
-                {props.updated}
+                Updated: {props.updated}
             </div>
         </div>
   );
