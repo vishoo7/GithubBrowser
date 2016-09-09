@@ -3,18 +3,18 @@ To build: npm install
 To run: npm start
 
 A few of the ES6 (or whatever you prefer to call it) features that I have included:
-- Classes
+- Classes:
  	This structure for components is especially favored over React.createClass 
-- Destructure
+- Destructure:
  	It's a much cleaner way to alias things
 - Default Parameters
-- Object spread operator
+- Object spread operator:
  	It was a convenient way to adhere to the immutability that's needed for redux
-- Arrow functions
+- Arrow functions:
  	It's less verbose 
-- Promises
+- Promises:
  	For doing something after getting a response from the API
-- let and const
+- let and const:
  	let is safer than var for scoping, and const prevents reassignment. There is no compelling reason to use var anymore
 
 
