@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CommitList from './CommitList';
-import * as githubApi from '../api/github-api';
+import * as githubApi from '../../api/github-api';
 
 const CommitListContainer = React.createClass({
 

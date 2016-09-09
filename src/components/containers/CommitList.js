@@ -1,6 +1,6 @@
 import React from 'react'
-import Commit from '../components/Commit'
-import SearchBar from '../containers/SearchBar'
+import Commit from '../views/Commit'
+import SearchBar from './SearchBar'
 
 
 class CommitList extends React.Component {
@@ -21,8 +21,9 @@ class CommitList extends React.Component {
 
   render() {
     let rows = [];
-    this.props.commits.forEach(function(commit) {
-          if (this.state.filterText !== "" && commit.commit.message.indexOf(this.state.filterText) === -1 ) {
+    let commits = this.props.commits.splice(0,20);
+    commits.forEach(function(commit) {
+          if (this.state.filterText !== "" && commit.commit.message.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1 ) {
             return;
           }
           rows.push(<Commit key={commit.sha} sha={commit.sha} message={commit.commit.message} author={commit.author.login}/>);

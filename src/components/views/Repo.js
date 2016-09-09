@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 const infoStyle = {
     fontSize: "12px",
@@ -9,19 +10,19 @@ const commitStyle = {
     paddingTop: "30px",
     paddingBottom: "30px"
 }
-const Commit = function(props) {
+const Repo = function(props) {
   return (
-    <div style={commitStyle}>
-            <h3>{props.sha}</h3>
+      <div style={commitStyle}>
+
+            <h3><Link to={'/commits/' + props.reponame}>{props.fullname}</Link></h3>
             <div>
-                {props.message}
+                {props.description}
             </div>
             <div style={infoStyle}>
-                {props.author}
+                Updated: {props.updated}
             </div>
         </div>
   );
 };
 
-
-export default Commit
+export default Repo
