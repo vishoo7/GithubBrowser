@@ -3,19 +3,23 @@ import { connect } from 'react-redux';
 import RepoList from '../views/RepoList';
 import * as githubApi from '../../api/github-api';
 
-const RepoListContainer = React.createClass({
+class RepoListContainer extends React.Component{
+  constructor(props) {
+    super(props);
+    this.username ='facebook';
+  }
 
-  componentDidMount: function() {
-    githubApi.fetchRepository('facebook');
-  },
+  componentDidMount() {
+    githubApi.fetchRepository(this.username);
+  }
 
-  render: function() {
+  render() {
     return (
       <RepoList repos={this.props.repos} />
     );
   }
 
-});
+};
 
 const mapStateToProps = function(store) {
   return {
