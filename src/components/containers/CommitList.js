@@ -21,7 +21,8 @@ class CommitList extends React.Component {
 
   render() {
     let rows = [];
-    this.props.commits.forEach(function(commit) {
+    let commits = this.props.commits.splice(0,20);
+    commits.forEach(function(commit) {
           if (this.state.filterText !== "" && commit.commit.message.toLowerCase().indexOf(this.state.filterText.toLowerCase()) === -1 ) {
             return;
           }
