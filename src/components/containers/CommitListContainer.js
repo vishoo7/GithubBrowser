@@ -3,19 +3,23 @@ import { connect } from 'react-redux';
 import CommitList from './CommitList';
 import * as githubApi from '../../api/github-api';
 
-const CommitListContainer = React.createClass({
+class CommitListContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.username ='facebook';
+  }
+  
+  componentDidMount() {
+    githubApi.fetchCommits(this.username, this.props.params.reponame);
+  }
 
-  componentDidMount: function() {
-    githubApi.fetchCommits('facebook', this.props.params.reponame);
-  },
-
-  render: function() {
+  render() {
     return (
       <CommitList commits={this.props.commits} />
     );
   }
 
-});
+}
 
 const mapStateToProps = function(store) {
   return {
