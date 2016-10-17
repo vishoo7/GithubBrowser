@@ -1,6 +1,6 @@
-To build: npm install
+To build: `npm install`
 
-To run: npm start
+To run: `npm start`
 
 A few of the ES6 (or whatever you prefer to call it) features that I have included:
 - Classes:
